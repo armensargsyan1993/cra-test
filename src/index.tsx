@@ -10,23 +10,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App />
-    <div
-      style={{
-        width: 300,
-        height: 300,
-        backgroundColor: "black",
-      }}
-    >
-      qwert
-    </div>
-    <div
-      style={{
-        width: 300,
-        height: 300,
-        backgroundColor: "black",
-      }}
-    >
-    </div>
   </React.StrictMode>
 );
 
