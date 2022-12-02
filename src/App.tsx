@@ -7,6 +7,7 @@ import {
   NavLink,
   Route,
   Routes,
+  useLocation,
   useNavigate,
 } from "react-router-dom";
 import { useEffect } from "react";
@@ -32,8 +33,10 @@ export default App;
 const Redirectt = () => {
   const nav = useNavigate();
 
+  const { pathname } = useLocation();
+
   useEffect(() => {
-    nav("home");
+    nav(`${pathname}/home`);
   }, []);
 
   return null;
