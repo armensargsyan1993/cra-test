@@ -51,6 +51,15 @@ root.render(
     >
       qwert
     </div>
+    <div
+      style={{
+        width: 300,
+        height: 300,
+        backgroundColor: "black",
+      }}
+    >
+      qwert
+    </div>
   </React.StrictMode>
 );
 
