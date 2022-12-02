@@ -1,17 +1,57 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { Link, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Link,
+  NavLink,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
 import { useEffect } from "react";
 
 function App() {
   const navigate = useNavigate();
   useEffect(() => {
-    navigate("/home");
+    navigate("home");
   }, []);
+
+  const d = new Date();
   return (
     <div className="App">
+      <div>{d.toString()}</div>
       <Link to="/">Home</Link>
+      <BrowserRouter basename="/">
+        <div>
+          <ul>
+            <li>
+              <NavLink to="/home">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">About</NavLink>
+            </li>
+          </ul>
+          <hr />
+          <Routes>
+            <Route path="/home" element={<App />} />
+            <Route
+              path="/about"
+              element={
+                <div
+                  style={{
+                    width: 300,
+                    height: 300,
+                    backgroundColor: "blue",
+                  }}
+                >
+                  000000000
+                </div>
+              }
+            />
+          </Routes>
+        </div>
+      </BrowserRouter>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

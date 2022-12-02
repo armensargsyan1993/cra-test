@@ -4,44 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import { Route, BrowserRouter, Routes, Link, NavLink } from "react-router-dom";
-
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    {/* <RouterProvider router={router} /> */}
-    <BrowserRouter basename="/">
-      <div>
-        <ul>
-          <li>
-            <NavLink to="/home">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-        </ul>
-        <hr />
-        <Routes>
-          <Route path="/home" element={<App />} />
-          <Route
-            path="/about"
-            element={
-              <div
-                style={{
-                  width: 300,
-                  height: 300,
-                  backgroundColor: "blue",
-                }}
-              >
-                000000000
-              </div>
-            }
-          />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <App />
     <div
       style={{
         width: 300,
@@ -58,7 +26,6 @@ root.render(
         backgroundColor: "black",
       }}
     >
-      qwert
     </div>
   </React.StrictMode>
 );
