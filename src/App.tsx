@@ -1,27 +1,29 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import {
   BrowserRouter,
   Link,
-  NavLink,
+  Navigate,
   Route,
   Routes,
   useLocation,
   useNavigate,
 } from "react-router-dom";
-import { useEffect } from "react";
+
+const getStyles = (color: "red" | "blue") => {
+  return {
+    width: 200,
+    height: 200,
+    backgroundColor: color,
+  };
+};
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Link to="/home">Home</Link>
-        <Link to="/about">about</Link>
-        <Redirectt />
+      <BrowserRouter basename="/cra-test">
         <Routes>
-          <Route path="/home" />
-          <Route path="/about" />
+          <Route path="/" element={<div style={getStyles("red")}>1</div>} />
+          <Route path="/a" element={<div style={getStyles("blue")}>2</div>} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -29,15 +31,3 @@ function App() {
 }
 
 export default App;
-
-const Redirectt = () => {
-  const nav = useNavigate();
-
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    nav(`${pathname}/home`);
-  }, []);
-
-  return null;
-};
